@@ -70,11 +70,10 @@ most_frequent_day
 # Distribution of crimes within months
 
 day_distribution <- uof %>%
-  mutate(day = lubridate::day(date_of_occurrence)) %>%
-  tabyl(day) %>%
+  mutate(day = day(date_of_occurrence)) %>%
+  count(day, sort = T) %>%
+  mutate(fraction = n/nrow(uof)) %>%
   adorn_totals()
-
-colnames(day_distribution) <- c("day", "n", "fraction")
 
 
 #-----------#
@@ -84,7 +83,8 @@ colnames(day_distribution) <- c("day", "n", "fraction")
 # Part 3.a
 # Save all unique categories of force used
 force_used_1 <- uof %>%
-  distinct(force_used_1)
+  select(force_used_1) %>%
+  unique()
 
 # Part 3.b 
 # Again but for force_used_2
