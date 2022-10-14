@@ -110,7 +110,7 @@ violent_force <- c("take down", "hobble", "ecw cartridge deployed", "knee strike
                    "kick", "deadly force used")
 
 # Part 3.e
-uof <- uof %>% select(-c(month, hour))
+uof <- read_csv("uof_louisville.csv")
 uof <- uof %>% mutate(violent_uof_1 = ifelse(force_used_1 %in% violent_force,1,0))
 
 
