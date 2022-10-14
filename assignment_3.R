@@ -82,14 +82,11 @@ day_distribution <- uof %>%
 
 # Part 3.a
 # Save all unique categories of force used
-force_used_1 <- uof %>%
-  select(force_used_1) %>%
-  unique()
+force_used_1 <- unique(uof$force_used_1)
 
 # Part 3.b 
 # Again but for force_used_2
-force_used_2 <- uof %>%
-  distinct(force_used_2)
+force_used_2 <- unique(uof$force_used_2)
 
 # Part 3.c
 # Extract all types of force used
