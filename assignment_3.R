@@ -111,7 +111,8 @@ violent_force <- c("take down", "hobble", "ecw cartridge deployed", "knee strike
 
 # Part 3.e
 uof <- uof %>% select(-c(month, hour))
-uof <- uof %>% mutate(violent_uof_1 = ifelse(force_used_1 %in% violent_force, 1, 0) )
+uof <- uof %>% mutate(violent_uof_1 = ifelse(force_used_1 %in% violent_force,1,0))
+
 
 # Part 3.f
 
